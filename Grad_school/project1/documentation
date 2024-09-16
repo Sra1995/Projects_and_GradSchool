@@ -1,0 +1,89 @@
+/*
+ CSC520 Computer Architecture
+ Project1 - IEEE 754 Converter
+ Programmers: Sajjad Alsaffar
+ Professor: Dr. Jeonghwa Lee
+ File Created: September 26th, 2023
+ File Updated: September 27th, 2023
+*/
+
+Abstract:
+This documentation provides an overview of the IEEE 754 Float to Hex Converter & vice versa, which is a C-language only program that allows users to convert floating-point numbers to their hexadecimal representations and vice versa. The document outlines the program's functions, design, and usage instructions.
+
+1. Program Functions:
+
+a. Float to Hex Conversion:
+Users can convert a floating-point number (e.g 0.25/0.3) to its corresponding IEEE 754 single-precision hexadecimal representation (e.g 0x3E800000/0x3E99999A).
+
+b. Hex to Float Conversion:
+Users can input a hexadecimal representation (e.g 0x3E800000/0x3E99999A) and receive the corresponding floating-point value (e.g 0.250000/0.300000).
+
+c. User Interface:
+The program presents a simple menu interface in terminal. Users are prompted to choose a choice ('f' for float to hex, 'h' for hex to float, or 'q' to quit). Input validation ensures correct user inputs.
+
+2. Program Design:
+
+short version:
+The program comprises two main functions: floatToHex and hexToFloat. It uses the sscanf function for input parsing and snprintf for formatting output. The design is modular, with distinct functions for each conversion task.
+
+long version:
+
+The program is organized into two primary functions, floatToHex and hexToFloat, each responsible for a specific conversion. 
+
+
+    i.floatToHex: The floatToHex function takes a floating-point number as input and converts it to its IEEE 754 single-precision hexadecimal representation. It does this by using a pointer to reinterpret the binary representation of the float as a 32-bit integer only(uint32_t). Then, it formats this integer as a hexadecimal string using the snprintf function, ensuring the output has the '0x' prefix, eight hexadecimal digits, and an 'a' character appended to indicate the hexadecimal representation. 
+
+    ii.hexToFloat: The hexToFloat function handles the reverse conversion by taking a hexadecimal representation (e.g., '0x3E9999a') as input and converting it back to a floating-point number. It starts by attempting to parse the hexadecimal input with the format specifier "0x%08X" to extract a 32-bit integer. If successful, it interprets this integer as a float. 
+
+The main function is built as looped option picker that will perform different tasks depending on the choice of the user. There are only 3 options(if you don't count the else action).
+
+option 'q':
+    this option will perform 'break' stop the program. This is part of the main reason I created the loop as I didn't want to keep opening the program to test it if it works correctly or not twice. hence why there is an option to break the loop so it doesn't run infinitly.
+
+option 'f':
+    Will promopt the user to input a float number. Then it will store that input under variable 'num' that is assigned float values, which will be used along side of an array called 'hex' with value of 11, so value range would be 0 to 10, in the function floatToHex which will convert the float number to hexdecimal. After that, it will print the output in the message "Hexadecimal representation: %s\n"
+
+option 'h':
+    will have variable that is an array called 'hex', with the value again 11. it will promt the user to input the hexadecimal in the format 0x00000000 with an example showing "0x3E99999a". Once the user input a correct hexadecimal it will take that input and plug it into the variable num that has the value of the hextoFloat function with hex variable as its argument
+
+
+3. How to Use the Program:
+
+To convert a float to hex:
+
+    Open the program
+    Choose 'f' from the menu.
+    Enter a floating-point number when prompted.
+    The program displays the hexadecimal representation.
+
+To convert hex to a float:
+
+    Choose 'h' from the menu.
+    Enter a hexadecimal representation (e.g., 0x3E9999a) when prompted (must be in the format '0xXXXXXXXX' zero then small x then 8 characters that represent hexadecimal value).
+    The program displays the floating-point representation.
+
+4. Limitations and Known Issues:
+
+The program expects the user to enter valid inputs and may behave unpredictably if given incorrect or malformed input.
+For example, if you choose 'f' then enter b it will output 0x00000001
+
+It currently handles single-precision (32-bit) IEEE 754 format only and doesn't have the option for double precision.
+
+I had to make choice between accurate answer for hextoFloat. if I fix it to show only 2 or 3 or 4 decimals after dot it will limit the input values. For example, if you choose 'f' then input 123.123 you will get the correct hexadecmial value, but when you choose 'h' and input the hexdecimal value it will output 123.123001. This can be troublsome for noobie users that doesn't know about how computers sometimes end the float decimals with incorrect decmial because how it calculate floats.
+
+5. Sources I used/learned from to create this project:
+
+I was looking for a function like hex() in python and ran into 
+"Failing to understand what the expression *(uint32_t*) does" on stackoverflow
+link: https://stackoverflow.com/questions/48833976/failing-to-understand-what-the-expression-uint32-t-does
+
+I was looking up when I had bug that caused my output to be only zeros after 0x even though i was using %p.
+"What is the difference between %p and 0x%08x" on stackoverflow
+link: https://stackoverflow.com/questions/33324673/what-is-the-difference-between-p-and-0x08x
+
+W3school my favorite website to recheck some function/interaction.
+link: https://www.w3schools.com/c/c_pointers.php
+
+6. Contact Information:
+
+For questions, feedback, or assistance, please contact me via school email.

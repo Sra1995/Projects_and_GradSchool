@@ -1,0 +1,24 @@
+/*
+ CSC520 Computer Architecture
+ Project1 - IEEE 754 Converter
+ Programmers: Sajjad Alsaffar
+ Professor: Dr. Jeonghwa Lee
+ File Created: September 25th, 2023
+ File Updated: September 27th, 2023
+*/
+
+Lab Description : Project to write a prgram that converts a floating-point number into an IEEE 754 format(single precision) or vice vers
+
+Platform/Language:
+    C language
+    MCT263 machines/Sloop/Clipper
+File Included :
+    Source Code : my754.c
+    Header Code : standard C language headers
+    Supplemental : readme, makefile, documentation
+How to compile :
+1.make
+2.gcc my754.c
+How to run:
+1. ./my754
+Known bugs: N/A
