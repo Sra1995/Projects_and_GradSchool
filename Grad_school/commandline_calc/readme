@@ -1,0 +1,28 @@
+/*
+ CSC521 Operating Systems
+ lab 2 - Commandline calculator
+ Programmers: Sajjad Alsaffar
+ Professor: Dr. Jeonghwa Lee
+ File Created: 01/24/2024
+ File Updated: 01/31/2024
+*/
+
+Lab Description : 
+    This program is a commandline calculator that takes in two numbers and an operator and performs the operation on the two numbers.
+
+Platform/Language:
+    C language
+    MCT263 machines/Sloop/Clipper
+File Included :
+    Source Code : lab2.c
+    Header Code : standard C language headers
+    Supplemental : readme, makefile
+How to compile :
+1.make
+2.gcc lab2.c -o lab2
+How to run:
+1. ./lab2 num1 num2 operator . i.e ./lab2 1 2 +
+
+Known bugs:
+1. the program is limited to 10 digites for each number. Hence if you add a sign before the 10 digits it will be considered as 11 digits input and will cause an error.
+2. the lab required the use of int data type, hence the program will not be able to handle large numbers compared to long long data type. 10 digits times 2 for example or adding two 10 digits numbers.
