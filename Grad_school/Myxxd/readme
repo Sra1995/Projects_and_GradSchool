@@ -1,0 +1,39 @@
+/*
+CSC520 Computer Architecture
+Project 2 - Myxxd Program - reverse engineering xxd but with less options (5 required)
+Programmer: Sajjad Alsaffar
+Professor: Dr. Jeonghwa Lee
+File Created: November 15, 2023
+File Updated: November 22, 2023
+*/
+
+Project Description:
+This project involves creating a custom version of the 'xxd' program that contains 5 options. The program performs a hex dump of a given file, providing options for various output and formats.
+
+Platform/Language:
+    C language
+    Tested on MCT263 machines/Sloop/Clipper
+
+Files Included:
+    Source Code: myxxd.c
+    Header Code: Standard C language headers
+    Supplemental: readme, makefile, documentation, test.txt
+
+How to Compile:
+1. `make`
+2. `gcc myxxd.c -o myxxd`
+
+How to Run:
+1. `./myxxd [options] [infile [outfile]]`
+   - Option is not required
+    -no option: `./myxxd [infile [outfile]]` or `./myxxd [infile]`
+   - Options:
+        - `-v`: Show version string
+        - `-h`: Print a summary of available commands and exit
+        - `-p`: Output in postscript continuous hexdump style
+        - `-b`: Switch to bits (binary digits) dump
+        - `-a`: Toggle autoskip
+        - `-l len`: Stop after writing <len> octets
+        - `-g bytes`: Separate the output of every <bytes> bytes
+
+Known Bugs: based on experminets conducted in documentation N/A. 

@@ -1,0 +1,184 @@
+Project: Myxxd Program - reverse engineering xxd but with less options (5 required)
+Program: Documentation
+Course: CSC520 Computer Architecture
+Professor: Dr. Lee
+Created: November 15, 2023
+Updated: November 22, 2023
+
+
+DOCUMENTATION
+
+Description of the Program:
+	
+    The myxxd program is a hexdump utility that provides functionality similar to the xxd program. It reads a binary input file, converts the data into hexadecimal representation, and optionally outputs in various formats.
+
+    The available options are:
+    -v              Show the version string.
+    -h              Print a summary of available commands and exit.
+    -p              Output in postscript continuous hexdump style.
+    -b              Switch to bits (binary digits) dump.
+    -a              Toggle autoskip.
+    -l len          Stop after writing <len> octets.
+    -g bytes        Separate the output of every <bytes> bytes.
+
+Algorithm:
+
+    1. Parse command line arguments and set corresponding flags based on the provided options.
+        1.1 If the -v option is specified, print the version string and exit.
+        1.2 If the -h option is specified, print a summary of available commands and exit.
+        1.3 If the -p option is specified, set the postscript flag.
+        1.4 If the -b option is specified, set the bits flag.
+        1.5 If the -a option is specified, set the autoskip flag.
+        1.6 If the -l option is specified, set the length flag and store the specified length.
+        1.7 If the -g option is specified, set the group flag and store the specified group size.
+        1.8 If the -p and -b options are specified, print an error message and exit.
+        1.9 If the -p and -a options are specified, print an error message and exit.
+        1.10 If the -b and -a options are specified, print an error message and exit.
+        1.11 If the -l option is specified but no length is provided, print an error message and exit.
+        1.12 If the -g option is specified but no group size is provided, print an error message and exit.
+    2. Open the input file for reading and output file for writing.
+        2.1 If output fie is not specified, create an output file with the same name listed as output file.
+        2.2 If input file is not specified, read from stdin.
+        2.3 If input file is not specified and stdin is not available, print an error message and exit.
+    3. Read the input file in chunks, converting each chunk into the specified hexdump format.
+        3.1 If the -p option is specified, convert the chunk into postscript continuous hexdump format.
+        3.2 If the -b option is specified, convert the chunk into bits (binary digits) dump format.
+        3.3 If the -p and -b options are not specified, convert the chunk into hexdump format.
+        3.4 If the -a option is specified, autoskip the chunk if it is not a full chunk.
+        3.5 If the -l option is specified, stop after writing the specified length.
+        3.6 If the -g option is specified, separate the output of every specified group size.
+    4. Output the hexdump to the specified output file or stdout.
+        4.1 If the -p option is specified, output the postscript continuous hexdump to the specified output file or stdout.
+        4.2 If the -b option is specified, output the bits (binary digits) dump to the specified output file or stdout.
+        4.3 If the -p and -b options are not specified, output the hexdump to the specified output file or stdout.
+    5. Close the input and output files.
+    6. Exit the program.
+
+
+Algorithm Analysis:
+
+    - The program first checks for valid command line arguments and opens the input and output files accordingly.
+    - It then reads the input file in chunks, converts the data to hexadecimal, and outputs it based on the specified options.
+    - Autoskip functionality is implemented to handle partial chunks at the end of the file.
+    - The program terminates when the specified length is reached or the end of the file is reached.
+    - The program closes the input and output files and exits.
+
+Numerical Experiments:
+
+    1. ./myxxd -v
+        Output: myxxd version 1.0
+
+    2. ./myxxd -h
+        Output: 
+        Usage: mxxd [options] [infile [outfile]]
+        Options:
+        -v              show version string
+        -h              print a summary of available commands and exit
+        -p              output in postscript continuous hexdump style
+        -b              switch to bits (binary digits) dump
+        -a              toggle autoskip
+        -l len          stop after writing <len> octets
+        -g bytes        separate the output of every <bytes> bytes
+
+    3. ./myxxd -p test.txt outputfile
+        Output: [Postscript continuous hexdump of test.txt to outputfile]
+        first 3 lines of outputfile to make it easy to read:
+            5570206272616e636820746f20656173
+            696c79206d697373656420627920646f
+            2e2041646d69726174696f6e20636f6e
+
+    4. ./myxxd -b test.txt outputfile
+        Output: [Bits (binary digits) dump of test.txt to outputfile]
+        first line of outputfile to make it easy to read:
+            00000000: 01010101 01110000 00100000 01100010 01110010 01100001 01101110 01100011 01101000 00100000 01110100 01101111 00100000 01100101 01100001 01110011  Up branch to eas
+
+    5. ./myxxd -a -l 100 test.txt outputfile
+        Output: [Hexdump with autoskip, stopping after 100 octets, of test.txt to outputfile]
+        content of output file:
+            00000000  5570  2062  7261  6e63  6820  746f  2065  6173   |Up branch to eas|
+            00000010  696c  7920  6d69  7373  6564  2062  7920  646f   |ily missed by do|
+            00000020  2e20  4164  6d69  7261  7469  6f6e  2063  6f6e   |. Admiration con|
+            00000030  7369  6465  7265  6420  6163  6365  7074  616e   |sidered acceptan|
+            00000040  6365  2074  6f6f  206c  6564  206f  6e65  206d   |ce too led one m|
+            00000050  656c  616e  6368  6f6c  7920  6578  7072  6573   |elancholy expres|
+            00000060  7369  6f6e                                             |sion|
+    6. ./myxxd -p -a -l 50 test.txt outputfile
+        Output: [Postscript continuous hexdump with autoskip, stopping after 50 octets, of test.txt to outputfile]
+        content of output file:
+            5570206272616e636820746f20656173
+            696c79206d697373656420627920646f
+            2e2041646d69726174696f6e20636f6e
+            7369
+    7. ./myxxd -b -a -l 50 test.txt outputfile
+        Output: [Bits (binary digits) dump with autoskip, stopping after 50 octets, of test.txt to outputfile]
+        content of output file:
+            00000000: 01010101 01110000 00100000 01100010 01110010 01100001 01101110 01100011 01101000 00100000 01110100 01101111 00100000 01100101 01100001 01110011  Up branch to eas
+            00000010: 01101001 01101100 01111001 00100000 01101101 01101001 01110011 01110011 01100101 01100100 00100000 01100010 01111001 00100000 01100100 01101111  ily missed by do
+            00000020: 00101110 00100000 01000001 01100100 01101101 01101001 01110010 01100001 01110100 01101001 01101111 01101110 00100000 01100011 01101111 01101110  . Admiration con
+            00000030: 01110011 01101001  si
+    8. ./myxxd -p -b test.txt outputfile
+        Output: [Error message]
+        Error: Cannot specify both -p and -b options. However, an output file is still created but it is empty.
+    9. ./myxxd -p /Users/sajjadalsaffar/Pictures/main_image_star-forming_region_carina_nircam_final-5mb.jpg output
+        output: [Postscript continuous hexdump of main_image_star-forming_region_carina_nircam_final-5mb to stdout][331899 lines]
+
+
+Numerical Analysis:
+
+    1. 1. ./myxxd -v
+        - The program prints the version string and exits.
+        - The program runs in constant time.
+    2. ./myxxd -h
+        - The program prints a summary of available commands and exits.
+        - The program runs in constant time.
+    3. ./myxxd -p test.txt outputfile
+        - The program converts the input file into postscript continuous hexdump format and outputs it to the specified output file.
+        - The program runs in linear time with respect to the size of the input file.
+    4. ./myxxd -b test.txt outputfile
+        - The program converts the input file into bits (binary digits) dump format and outputs it to the specified output file.
+        - The program runs in linear time with respect to the size of the input file.
+    5. ./myxxd -a -l 100 test.txt outputfile
+        - The program converts the input file into hexdump format with autoskip, stopping after 100 octets, and outputs it to the specified output file.
+        - The program runs in linear time with respect to the size of the input file.
+    6. ./myxxd -p -a -l 50 test.txt outputfile
+        - The program converts the input file into postscript continuous hexdump format with autoskip, stopping after 50 octets, and outputs it to the specified output file.
+        - The program runs in linear time with respect to the size of the input file.
+    7. ./myxxd -b -a -l 50 test.txt outputfile
+        - The program converts the input file into bits (binary digits) dump format with autoskip, stopping after 50 octets, and outputs it to the specified output file.
+        - The program runs in linear time with respect to the size of the input file.
+    8. ./myxxd -p -b test.txt outputfile
+        - The program prints an error message and exits.
+        - The program runs in constant time.
+    9. ./myxxd -p /Users/sajjadalsaffar/Pictures/main_image_star-forming_region_carina_nircam_final-5mb.jpg output
+        - The program converts the input file into postscript continuous hexdump format and outputs it to stdout.
+        - The program runs in linear time with respect to the size of the input file. This took about couple seconds longer than the previous tests because the input file is much larger and the picture have much more details than the average camera since it is a picture from James Webb Space Telescope.
+        - The program manages to take input file from a different directory and output to the output file in the current directory.
+    
+    - Experiments were conducted with various combinations of options to ensure the correct behavior of the myxxd program.
+    - The program handles different input file sizes, formats, and options gracefully(after long hours and lots of coffee).
+    - The program runs in linear time with respect to the size of the input file. This is because the program reads the input file in chunks and converts each chunk into the specified hexdump format. The autoskip functionality is implemented to handle partial chunks at the end of the file. The program terminates when the specified length is reached or the end of the file is reached. The program closes the input and output files and exits. 
+
+Conclusion:
+
+    The myxxd program successfully provides a flexible hexdump utility with various options for formatting and output. The algorithm analysis and numerical experiments demonstrate that the program works as intended. The program runs in linear time with respect to the size of the input file. 
+    
+    Desipite it being a simple program, it was a great learning experience for me and it was fun to implement except for my attempt to implement the -r / -revert option and -c / -cols which I could not get to work without breaking something else in the program. This project was fun and I am glad I got to work on it as I didn't know there was a built in hexediter on linux and macOS(I didn't see it on my windows 11 operating system). I will definitely use it in the future if i need some sort of hex editing.
+
+References:
+
+    [1] Tutorialspoint - C Standard Library - String.h
+    https://www.tutorialspoint.com/c_standard_library/string_h.htm
+    [2] Tutorialspoint - C Standard Library - Ctype.h
+    https://www.tutorialspoint.com/c_standard_library/ctype_h.htm
+    [3] NASA's Webb reveals Cosmic Cliffs, glittering landscape of Star birth
+    https://www.nasa.gov/image-article/nasas-webb-reveals-cosmic-cliffs-glittering-landscape-of-star-birth/
+    [4] Xxd(1): Make Hexdump/do reverse - linux man page
+    https://linux.die.net/man/1/xxd
+    [5] Hexdump - Wikipedia
+    https://en.wikipedia.org/wiki/Hex_dump
+    [6] w3schools - C Language
+    https://www.w3schools.com/c/index.php
+    [7] Argc and Argv in C - The Geek Stuff
+    https://www.thegeekstuff.com/2013/01/c-argc-argv/
+    [8] The main() function - IBM Documentation
+    https://www.ibm.com/docs/en/i/7.1?topic=functions-main-function
