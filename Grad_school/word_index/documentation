@@ -1,0 +1,224 @@
+Project: myword - a program that reads the contents of a text file
+Program: Documentation
+Course: CSC504 Programming for info sys
+Professor: Dr. Lee
+Created: November 28, 2023
+Updated: December 3, 2023
+
+
+DOCUMENTATION
+
+Description of the Program:
+	myword program is a program that reads the contents of a text file. The program should create a dictionary in which
+    the key-value pairs are described as follows:
+        keys - The keys are the individual words found in the file(input file).
+        values - Each value is a list that contains the line numbers in the file where the word (the key) is found.
+    
+    
+
+Algorithm:
+
+The program follows a systematic algorithm to create a word index from an input text file, providing a count of occurrences and the corresponding line numbers for each unique word.
+The main function is structured as follows:
+
+simple steps:
+
+1. Main Function: 
+   - Verifies if the script is run directly and checks for the correct number of command-line arguments.
+   - Retrieves input and output file names from the command-line arguments.
+   - Warns the user if the output file already exists, as it will be overwritten.
+   - Calls the `word_lines` function to process the input file and generate the word index.
+
+2. Import Libraries:
+   - Imports necessary libraries, such as `sys` for handling command-line arguments and `os` for checking file existence.
+
+3. Word Index Function (`word_lines`):
+   - Initializes an empty dictionary, `Word_Dict`, to store word occurrences and their corresponding line numbers.
+   - Reads the input file line by line, splitting each line into words.
+   - Iterates through each word, updating the dictionary with the current line number for each occurrence.
+   - Checks if the output file already exists and issues a warning if it does.
+   - Writes the sorted word index to the output file, displaying each word along with the count of occurrences and corresponding line numbers.
+   - Prints a success message indicating the completion of processing and the location of the output file.
+
+In depth steps:
+
+1. Main function:
+   1.1. Check if the script is run directly using `if __name__ == "__main__":`.
+   1.2. Check if the correct number of command-line arguments is provided (must be 3).
+      1.2.1. If the number of arguments is not equal to 3, print an error message regarding the usage of the program.
+   1.3. If the correct number of arguments is provided:
+      1.3.1. Get the input file name from command-line arguments: `input_file = sys.argv[1]`.
+      1.3.2. Get the output file name from command-line arguments: `output_file = sys.argv[2]`.
+      1.3.3. Check if the output file exists.
+         1.3.3.1. If the output file exists, print a warning message about overwriting it.
+      1.3.4. Call the `word_lines` function with the input and output file names as arguments.
+
+2. Import necessary libraries:
+   2.1. `import sys`  # For command-line arguments
+   2.2. `import os`  # For checking if the output file exists
+
+3. Define the `word_lines` function:
+   3.1. Create an empty dictionary `Word_Dict` to store word occurrences.
+   3.2. Open the input file for reading using `with open(input_file, 'r') as input`.
+   3.3. Initialize a line number counter: `line_number = 1`.
+   3.4. Iterate over each line in the input file.
+      3.4.1. Split the line into words using space as the separator and store them in a list: `words = [x for x in line.split()]`.
+      3.4.2. Iterate over the words in the list.
+         3.4.2.1. If the word is in the dictionary, append the line number to the list of line numbers for the word.
+         3.4.2.2. If the word is not in the dictionary, add it with a list containing the current line number.
+      3.4.3. Increment the line number counter: `line_number += 1`.
+
+   3.5. Check if the output file exists.
+      3.5.1. If the output file exists, print a warning message.
+   3.6. Open the output file for writing using `with open(output_file, 'w') as output`.
+   3.7. Iterate over the items in the dictionary, sorted alphabetically.
+      3.7.1. Write the word, the number of lines, and line numbers to the output file using `output.write()`.
+
+   3.8. Print a success message indicating the completion of processing and the location of the output file.
+
+
+Algorithm Analysis:
+
+1. Iterating Through Lines:
+   - The algorithm iterates through each line of the input file once. The time complexity for this operation is O(N), where N is the number of lines in the input file.
+
+2. Splitting Words:
+   - For each line, the algorithm splits the words based on spaces. The splitting operation takes O(M) time, where M is the average number of words in a line.
+
+3. Updating Dictionary:
+   - The algorithm updates the dictionary with word occurrences and line numbers. In the worst case, each word is unique, and the dictionary may have all words from the input.
+   This operation takes O(K), where K is the total number of unique words.
+
+4. Sorting Dictionary:
+   - The algorithm sorts the dictionary based on keys (words). The sorting operation has a time complexity of O(K log K), where K is the number of unique words.
+
+5. Writing to Output File:
+   - The algorithm writes the word index to the output file. The time complexity for this operation depends on the length of the word index, and in the worst case, it is O(K).
+
+6. Overall Complexity:
+   - Combining the complexities of the individual steps, the overall time complexity is dominated by the sorting operation, making it O(K log K).
+
+Conclusion:
+   The dominating factor in the algorithm's time complexity is the sorting operation of the word index.
+   Sorting has a time complexity of O(K log K), where K is the number of unique words.
+   This is because the algorithm needs to arrange all unique words in alphabetical order.
+   The other operations, such as iterating through lines and updating the dictionary, contribute linear complexities, but 
+   the sorting operation takes precedence in determining the overall efficiency of the algorithm.
+   Therefore, the Big O notation for the algorithm is O(K log K).
+
+
+Numerical Experiments:
+    1. python3 myword.py
+    output:
+        Usage: python3 myprogram.py input.txt output.txt
+        You have entered 1 arguments
+        please try again
+    2. python3 myword.py input.txt output.txt (output.txt doesn't exists)
+    output:
+        Operation finished, Please review the results in  output.txt
+        inside output.txt:
+            We = 1
+            a = 1 2 4
+            an = 3
+            as = 4 5 6
+            beginning = 4
+            but = 2
+            celebration = 2
+            change = 6
+            end = 3
+            freedom = 3
+            not = 1
+            observe = 1
+            of = 2 3
+            party = 2
+            renewal = 5
+            signifying = 5
+            symbloizing = 3
+            today = 1
+            victory = 1
+            well = 4 5
+    3. python3 myword.py input.txt output.txt (output.txt exists)
+    output:
+        Output file already exists. It will be overwritten.
+        Operation finished, Please review the results in  output.txt
+        inside output.txt:
+            We = 1
+            a = 1 2 4
+            an = 3
+            as = 4 5 6
+            beginning = 4
+            but = 2
+            celebration = 2
+            change = 6
+            end = 3
+            freedom = 3
+            not = 1
+            observe = 1
+            of = 2 3
+            party = 2
+            renewal = 5
+            signifying = 5
+            symbloizing = 3
+            today = 1
+            victory = 1
+            well = 4 5
+    4. python3 myword.py input2 output2 (without extension)
+    output:
+        Operation finished, Please review the results in  output2.txt
+        inside input2:
+            This is a test
+            for a test
+            inside a test
+        inside output2:
+            This = 1
+            a = 1 2 3
+            for = 2
+            inside = 3
+            is = 1
+            test = 1 2 3
+
+Numerical Analysis:
+    1. python3 myword.py
+        The script is not used correctly with insufficient arguments.
+        The program displays an error message and instructs the user to provide the correct number of arguments.
+    2. python3 myword.py input.txt output.txt (output.txt doesn't exists)
+        The script is used correctly with the input and output file names.
+        The program processes the input file, creates a word index, and writes it to the output file.
+        The output file is then displayed, showing word occurrences and line numbers.
+    3. python3 myword.py input.txt output.txt (output.txt exists)
+        The script is used correctly with the input and output file names.
+        The program detects that the output file already exists and issues a warning.
+        Despite the warning, the program overwrites the existing output file and displays the word index.
+    4. python3 myword.py input2 output2 (without extension)
+        The script is used correctly with the input and output file names.
+        The program processes the input file (input2 without extension just plain text), creates a word index, and writes it to the output file (output2 without extension just plain text).
+        Both the input file and output file are displayed, showing the content of input2 and the word index in output2.
+
+Conclusion:
+
+myword program effectively processes text files, creating a detailed word index with occurrences and corresponding line numbers. The algorithm demonstrates 
+a systematic approach, incorporating error handling for incorrect script usage and warnings about overwriting existing output files. The program's numerical 
+experiments showcase its functionality in various scenarios, providing informative output messages. The algorithm analysis reveals that the sorting operation
+dominates the time complexity, and the overall efficiency is commendable with a Big O notation of O(K log K). Overall, the program is a reliable tool for
+generating word indices from text files.
+
+I am delighted to have worked on this project as it has highlighted for me the simplicity and ease of working with Python in comparison to C. The project I 
+previously undertook, called "myxxd.c," involved utilizing command lines, and this experience emphasized Python's user-friendly and straightforward nature, making
+the development process more efficient and enjoyable.
+
+References:
+
+[1] python OS library for file path
+https://docs.python.org/3/library/os.path.html
+    
+[2] python sys library for command line arguments
+https://docs.python.org/3/library/sys.html
+
+[3] python dictionary
+https://docs.python.org/3/tutorial/datastructures.html#dictionaries
+
+[4] python dictionary get method
+https://www.w3schools.com/python/ref_dictionary_get.asp
+
+[5] python map function
+https://www.w3schools.com/python/ref_func_map.asp

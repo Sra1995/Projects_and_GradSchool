@@ -1,0 +1,32 @@
+/*
+CSC504 Programming for info sys
+Project - myword - a program that reads the contents of a text file
+Programmer: Sajjad Alsaffar
+Professor: Dr. Jeonghwa Lee
+File Created: November 28, 2023
+File Updated: December 3, 2023
+*/
+
+Project Description:
+    myword is a program designed to read the contents of a text file and generate a word index, indicating the line numbers where each word is located. The output is saved in the same directory as the myword.py file and is named output.txt.
+
+Platform/Language:
+    Language: Python
+    Platform: MCT263 machines/Sloop/Clipper
+
+Files Included:
+    myword.py - the main program
+    README.md - this file
+    inputfile.txt - the text file to be processed
+
+How to Run:
+    Write the following command in the terminal:
+    ```
+    python3 myword.py inputfile.txt output.txt
+    ```
+    - Replace `inputfile.txt` with the name of the file to be read.
+    - Replace `output.txt` with the desired output file name. If it doesn't exist, it will be created by the code.
+
+Known Bugs:
+    Based on experiments conducted in the documentation, no bugs were identified.
+

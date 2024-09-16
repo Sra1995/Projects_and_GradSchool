@@ -1,0 +1,31 @@
+"""
+Command-line arguments:
+[0] argv[0] is the name of the program itself
+[1] argv[1] is the first command-line argument => input file name
+[2] argv[2] is the second command-line argument => output file name
+
+
+Example: python3 myprogram.py input.txt output.txt 
+or
+Example: python3 myprogram.py input.txt output.txt ; <- seperator is a semicolon
+
+old one
+pseduo code:
+open file
+read file using readlines
+split lines into words using split
+if the word is not in the dictionary, add it with an empty list as its value
+Then add the line number to the list of line numbers for the word
+increase line number counter to go to next line number
+open output file
+write the dictionary to the output file
+print a success message
+
+if the file was overwritten, print a warning message
+if specific separator is not provided, use space as default separator
+if the file was not found, print an error message
+if any other error occurs, print the error message
+
+bugs found during coding:
+counting \n as a word  ** fixed by using strip() function
+"""
