@@ -1,0 +1,94 @@
+/*
+CSC521 Operating Systems 
+Project #1: – A MyShell Program
+Programmers: Sajjad Alsaffar
+Professor: Dr. Lee
+Date created: 02/14/2024
+Date modified: 03/08/2024
+*/
+
+=====================================================
+               MyShell Documentation
+=====================================================
+
+1. Description of the Program:
+-------------------------------
+MyShell is a sophisticated command-line interface designed for versatile interaction with the operating system. It encompasses a broad spectrum of internal and external commands, facilitating a seamless and user-friendly shell experience.
+
+2. Algorithm:
+-------------
+MyShell employs a robust algorithmic structure, emphasizing efficiency, modularity, and responsiveness.
+
+   a. Display Prompt and Read Input:
+      - The display of the prompt and reading user input operate in constant time, O(1).
+
+   b. Argument Parsing:
+      - Tokenizing and parsing input into arguments incur linear time complexity, O(n), where n is the length of the input.
+
+   c. Execution of Internal Commands:
+      - Execution of internal commands is typically constant time, O(1), as these operations involve direct function calls.
+
+   d. Fork and Exec for External Commands:
+      - Forking and executing external commands introduce an overhead, resulting in linear time complexity, O(n), where n is the length of the external command.
+
+   e. Process Management:
+      - Process management operations, such as waiting for child processes, are generally constant time, O(1).
+
+   f. Continuous Loop:
+      - The continuous loop contributes to linear time complexity, O(m), where m is the number of user interactions.
+
+3. Analysis of the Algorithm and Output:
+----------------------------------------
+The algorithm's time complexity analysis provides insights into the program's efficiency and scalability.
+
+   a. Command Execution and User Interaction:
+      - Internal commands exhibit constant time complexity, ensuring rapid and responsive execution.
+      - External commands, though linear, maintain efficiency for typical command lengths.
+
+   b. Concurrency and Resource Management:
+      - Forking and executing external commands introduce a manageable overhead, preserving system responsiveness.
+
+   c. Error Handling and User Guidance:
+      - Error handling operations generally operate in constant time, contributing negligibly to overall execution time.
+
+   d. Extensibility and Maintenance:
+      - Modular design supports seamless addition of new functionalities without significant impact on existing time complexity.
+
+   e. Adherence to POSIX Standards:
+      - Adherence to standards minimally impacts time complexity, ensuring compatibility without compromising efficiency.
+
+   f. Performance Optimization:
+      - The algorithm optimally balances responsiveness and computational efficiency, with individual operations contributing reasonably to overall execution time.
+
+   g. Memory Management:
+      - Memory operations are kept efficient, contributing modestly to the overall time complexity.
+
+4. Performance Description for the Entire Project:
+--------------------------------------------------
+In evaluating the program's performance, considerations extend beyond time complexity to encompass broader aspects of efficiency and user experience.
+
+a. Efficiency and Resource Utilization:
+   - MyShell demonstrates optimal resource utilization, with time complexity considerations complementing overall efficiency.
+
+b. Memory Footprint:
+   - The program maintains a lean memory footprint, aligning with considerations beyond time complexity.
+
+c. User Interaction and Customization:
+   - Interactive features are not unduly impacted by time complexity considerations, providing a smooth user experience.
+
+d. Error Resilience:
+   - The program's robust error handling, while minimally impacting time complexity, significantly enhances user experience.
+
+e. Modularity and Maintainability:
+   - Modularity considerations provide efficiency in development and maintenance without imposing significant time complexity overhead.
+
+f. Portability:
+   - Adherence to standards ensures compatibility without introducing notable time complexity concerns.
+
+5. Conclusion:
+--------------
+In conclusion, MyShell's time complexity considerations align with an overall commitment to efficiency and user experience. The program excels in delivering a responsive and feature-rich shell environment, with time complexity playing a measured role in its performance.
+
+=====================================================
+                  End of Documentation
+=====================================================

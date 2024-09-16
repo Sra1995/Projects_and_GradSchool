@@ -1,0 +1,73 @@
+========================================================
+                 MyShell - User Manual
+========================================================
+
+NAME
+     myshell - a simple command-line shell program
+
+SYNOPSIS
+     #include "util.h"
+     #include "shell_commands.h"
+     #include <stdio.h>
+     #include <stdlib.h>
+     #include <string.h>
+     #include <sys/types.h>
+     #include <sys/wait.h>
+     #include <unistd.h>
+
+DESCRIPTION
+     MyShell is a simple command-line shell program that provides a set of basic commands to interact with your operating system. It supports both internal and external commands.
+
+     Internal commands include:
+           • mycd <directory>
+           • myclr
+           • mydir <directory>
+           • myenviron
+           • myecho <comment>
+           • myhelp
+           • mypause
+           • myquit
+
+     External commands are interpreted as program invocations and executed by forking and creating a child process.
+
+     The shell environment includes a customizable prompt displaying the current directory.
+
+BUILDING AND RUNNING
+     To build MyShell, use the provided Makefile:
+
+     ```bash
+     make
+     ```
+
+     After building, run the shell:
+
+     ```bash
+     ./myshell
+     ```
+
+INTERNAL COMMANDS
+     - `mycd <directory>`: Change the current default directory.
+     - `myclr`: Clear the screen.
+     - `mydir <directory>`: List the contents of the specified directory.
+     - `myenviron`: List all environment strings.
+     - `myecho <comment>`: Display a comment on the display.
+     - `myhelp`: Display the user manual using the more filter.
+     - `mypause`: Pause the operation of the shell.
+     - `myquit`: Quit the shell.
+
+EXTERNAL COMMANDS
+     All other command-line input is interpreted as program invocation. MyShell forks and execs the program as its own child process. The programs are executed with an environment that contains the entry: parent=<pathname>/myshell.
+
+CUSTOMIZING THE PROMPT
+     The command line prompt contains the pathname of the current directory.
+
+CONTRIBUTING
+     Contributions to MyShell are welcome. Submit bug reports, feature requests, or enhancements through our GitHub repository.
+
+LICENSE
+     MyShell is distributed under the [license name] license. See the LICENSE file for details.
+
+ACKNOWLEDGMENTS
+     We would like to express our gratitude to [Acknowledgments] for their contributions and support.
+
+Thank you for using Simple MyShell!

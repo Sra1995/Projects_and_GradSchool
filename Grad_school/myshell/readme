@@ -1,0 +1,55 @@
+/*
+CSC521 Operating Systems 
+Project #1: – A MyShell Program
+Programmers: Sajjad Alsaffar
+Professor: Dr. Lee
+Date created: 02/14/2024
+Date modified: 03/08/2024
+*/
+
+Project Description:
+    MyShell is a simple command-line shell program designed to provide a user-friendly interface for interacting with the operating system. The program supports a set of internal commands, such as changing the current directory, clearing the screen, listing directory contents, displaying environment strings, echoing comments, displaying the user manual, pausing the shell, and quitting the shell. Additionally, it allows the execution of external commands by forking and creating child processes.
+
+Platform/Language:
+    C language
+    MCT263 machines/Sloop/Clipper
+    Developed and tested on macOS and Linux environments
+
+Files Included:
+    Source Code: main.c, shell_commands.c, util.c
+    Header Files: shell_commands.h, util.h
+    Makefile: makefile
+    Supplemental: readme, documentation, manual, typescript
+
+How to Compile:
+1. Open a terminal in the project directory.
+2. Run the command: make
+
+How to Run:
+1. After successful compilation, run the command: ./myshell
+2. The shell prompt will be displayed, allowing you to enter commands.
+
+Internal Commands:
+    - mycd <directory>: Change the current directory.
+    - myclr: Clear the screen.
+    - mydir <directory>: List contents of a directory.
+    - myenviron: List all environment strings.
+    - myecho <comment>: Display a comment.
+    - myhelp: Display the user manual.
+    - mypause: Pause the shell until 'Enter' is pressed.
+    - myquit: Quit the shell.
+
+External Commands:
+    - All other command line input is interpreted as program invocation, executed as a child process.
+
+Prompt Format:
+    The command line prompt contains the pathname of the current directory. 
+    It is displayed as follows: /pathname/myshell) 
+
+Known Issues:
+    1. The myecho command may not handle tabs properly.
+    2. External commands are expected to work, but variations across systems may impact their behavior.
+
+How to Quit:
+    Use the internal command myquit to exit the shell.
+
