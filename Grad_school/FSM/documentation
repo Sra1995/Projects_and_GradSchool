@@ -1,0 +1,105 @@
+/*****************************************************************
+* Program: DFA Simulator
+* Author: Sajjad Alsaffar
+* 
+* Purpose:
+* This program simulates a Deterministic Finite Automaton (DFA).
+* It reads a DFA definition from a file (DFA.txt), then evaluates
+* input strings provided by the user. It outputs a computation 
+* trace for each string and indicates whether the string is accepted
+* or rejected by the DFA. The program handles invalid input 
+* characters and can be terminated by entering "Quit".
+* 
+* Input:
+* The DFA is loaded from a file in the following format:
+* - Line 1: Number of states.
+* - Line 2: Space-separated list of accepting states.
+* - Line 3: Space-separated alphabet characters.
+* - Lines 4+: Transition table for each state and alphabet character.
+* 
+* Output:
+* The program prints the DFA computation trace for each string 
+* and whether the string is "ACCEPTED" or "REJECTED".
+* 
+* Example:
+* >>>Loading DFA.txt…
+* >>>Please enter a string to evaluate: 
+* abbbcab
+* >>>Computation… 
+* 0,abbbcab -> 0,bbbcab 
+* 0,bbbcab -> 0,bbcab 
+* 0,bbcab -> 0,bcab 
+* 0,cab -> 1,ab 
+* 1,ab -> 1,b 
+* 1,b -> 2,{e}
+* ACCEPTED
+* 
+*****************************************************************/
+
+# DFA Simulator Documentation
+
+## Program Overview:
+The DFA Simulator program reads a Deterministic Finite Automaton (DFA) definition from a file (`DFA.txt`), prompts the user to input strings, and evaluates whether the strings are accepted or rejected by the DFA. The program outputs the computation steps for each string and indicates whether the string is accepted or rejected.
+
+## Key Components:
+
+1. **load_dfa(filename):**
+   - **Purpose:** Reads the DFA configuration from a file.
+   - **Input:** `filename` (string) - The name of the file containing the DFA description (`DFA.txt`).
+   - **Output:** Returns a tuple containing the number of states, accepting states, alphabet, and transition table.
+   
+2. **evaluate_string(dfa, input_string):**
+   - **Purpose:** Evaluates if the input string is accepted or rejected by the DFA.
+   - **Input:** 
+     - `dfa` (tuple) - The DFA configuration (num_states, accepting_states, alphabet, transitions).
+     - `input_string` (string) - The string to be evaluated.
+   - **Output:** Prints the computation trace and returns "ACCEPTED" or "REJECTED".
+
+3. **main():**
+   - **Purpose:** Main function that loads the DFA, prompts for input strings, and evaluates them using the DFA.
+   - **Flow:**
+     1. Loads the DFA from `DFA.txt`.
+     2. Continuously prompts the user for input strings.
+     3. Prints "Goodbye!" if the user inputs "Quit".
+   
+## Input File Format (`DFA.txt`):
+- **Line 1:** Integer indicating the number of states.
+- **Line 2:** Space-separated list of accepting states.
+- **Line 3:** Space-separated list of characters representing the alphabet.
+- **Subsequent Lines:** Transition table (each row corresponds to a state's transitions for each alphabet character).
+
+## Program Execution Flow:
+1. The program loads the DFA configuration from `DFA.txt`.
+2. The user is prompted to enter a string to evaluate.
+3. The program traces the DFA's computation step-by-step for each character in the string.
+4. The result is printed as "ACCEPTED" if the string reaches an accepting state, or "REJECTED" otherwise.
+5. The user can input "Quit" to terminate the program.
+
+## Sample DFA Input File:
+
+5
+2 4
+a b c
+0 0 1
+1 2 3
+2 2 4
+3 3 3
+4 4 4
+
+## Sample Output:
+>>>Loading DFA.txt...
+>>>Please enter a string to evaluate: abbbcab
+>>>Computation…
+0,abbbcab -> 0,bbbcab
+0,bbbcab -> 0,bbcab
+0,bbcab -> 0,bcab
+0,bcab -> 0,cab
+0,cab -> 1,ab
+1,ab -> 1,b
+1,b -> 2,{e}
+ACCEPTED
+
+## Notes:
+- Handles invalid input characters by printing "INVALID INPUT" and rejecting the string.
+- Strings that do not end in an accepting state are rejected.
+- Special case `{e}` is used to denote an empty remaining input.
