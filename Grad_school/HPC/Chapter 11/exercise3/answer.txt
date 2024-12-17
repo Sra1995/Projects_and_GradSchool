@@ -1,0 +1,63 @@
+8-Puzzle Solver Using MPI
+
+This project implements an 8-puzzle solver using a parallel approach with MPI (Message Passing Interface). The 8-puzzle is a sliding puzzle consisting of a 3x3 grid with tiles numbered from 1 to 8 and one blank space. The goal is to rearrange the tiles to match the goal state by sliding the tiles into the blank space.
+
+## Approach
+
+### Parallel Approach (exercise3.cpp)
+- **Closeness Measure**: Uses the Manhattan distance to estimate the closeness of the current state to the goal state.
+- **Path Assignment**: The master process assigns initial paths to worker processes. Workers explore these paths and communicate back their results.
+- **Visited States**: A global set tracks all visited states to avoid redundant exploration.
+- **Dynamic Reassignment**: The master process dynamically reassigns paths to idle processors to maximize utilization.
+- **Termination**: Once a worker finds the goal state, it informs the master process, which then stops further processing and prints the solution.
+
+### Serial Approach (exercise2.cpp)
+- **Depth-First Search (DFS)**: Uses DFS to explore possible moves from the initial state until it finds the goal state.
+- **Closeness Measure**: Uses the Manhattan distance to estimate the closeness of the current state to the goal state.
+- **Visited States**: A set tracks all visited states to avoid redundant exploration.
+- **Solution Steps**: Prints the initial puzzle, the steps to the solution, the solved puzzle, and the time taken to find the solution.
+
+## Comparison Based on Raw Output
+
+### Parallel Version (exercise3.cpp)
+- **Output**:
+  - Initial State:
+    ```
+    1 2 3 
+    4 5 6 
+    7 8 0 
+    ```
+  - Solution Found:
+    ```
+    1 2 3 
+    4 5 6 
+    7 8 0 
+    ```
+  - Time taken: Approximately 0.003 to 0.004 seconds
+
+### Serial Version (exercise2.cpp)
+- **Output**:
+  - Initial Puzzle:
+    ```
+    1 2 3 
+    4 5 6 
+    7 0 8 
+    ```
+  - Solution Found:
+    ```
+    1 2 3 
+    4 5 6 
+    7 0 8 
+    1 2 3 
+    4 5 6 
+    7 8 0 
+    ```
+  - Time taken: Approximately 0.00007 to 0.00011 seconds
+
+## Conclusion
+
+The parallel approach using MPI effectively distributes the workload among multiple processors, allowing for faster exploration of possible moves and quicker identification of the goal state. Although the serial version is faster for this simple case, the parallel approach scales better for more complex puzzles and larger datasets.
+
+Author
+
+This project was created by Sajjad Al Saffar as part of the CSC523 - HPC course at Shippensburg University for Fall 2024.

@@ -1,0 +1,202 @@
+sajjadalsaffar@Sajjads-MacBook-Air-130 exercise3 % mpic++ -std=c++11 -o exercise3 exercise3.cpp
+sajjadalsaffar@Sajjads-MacBook-Air-130 exercise3 % mpirun -np 8 ./exercise3                    
+Rank 2 waiting to receive state.
+Rank 5 waiting to receive state.
+Rank 7 waiting to receive state.
+Rank 3 waiting to receive state.
+Rank 6 waiting to receive state.
+Rank 4 waiting to receive state.
+Rank 1 waiting to receive state.
+Initial State:
+1 2 3 
+4 5 6 
+7 8 0 
+Rank 0 sending state to rank 1
+Rank 0 sending state to rank 2
+Rank 0 sending state to rank 3
+Rank 0 sending state to rank 4
+Rank 0 sending state to rank 5
+Rank 0 sending state to rank 6
+Rank 4 received state.
+Rank 4 found goal state.
+Rank 4 sending termination signal.
+Rank 2 received state.
+Rank 2 found goal state.
+Rank 2 sending termination signal.
+Rank 0 sending state to rank 7
+Rank 0 received move from rank 4
+Goal state found by rank 4
+1 2 3 
+Rank 5 received state.
+Rank 5 found goal state.
+Rank 7 received state.
+Rank 7 found goal state.
+Rank 7 sending termination signal.
+Rank 3 received state.
+Rank 3 found goal state.
+Rank 3 sending termination signal.
+Rank 1 received state.
+Rank 1 found goal state.
+Rank 1 sending termination signal.
+4 5 6 
+7 8 0 
+Solution found:
+1 2 3 
+4 5 6 
+7 8 0 
+Rank 5 sending termination signal.
+Rank 6 received state.
+Rank 6 found goal state.
+Rank 6 sending termination signal.
+Time taken: 0.004087 seconds
+sajjadalsaffar@Sajjads-MacBook-Air-130 exercise3 % mpirun -np 8 ./exercise3
+Rank 7 waiting to receive state.
+Rank 6 waiting to receive state.
+Rank 5 waiting to receive state.
+Rank 1 waiting to receive state.
+Rank 3 waiting to receive state.
+Rank 2 waiting to receive state.
+Rank 4 waiting to receive state.
+Initial State:
+1 2 3 
+4 5 6 
+7 8 0 
+Rank 0 sending state to rank 1
+Rank 0 sending state to rank 2
+Rank 1 received state.
+Rank 1 found goal state.
+Rank 1 sending termination signal.
+Rank 0 sending state to rank 3
+Rank 0 sending state to rank 4
+Rank 0 sending state to rank 5
+Rank 0 sending state to rank 6
+Rank 0 sending state to rank 7
+Rank 2 received state.
+Rank 2 found goal state.
+Rank 3 received state.
+Rank 3 found goal state.
+Rank 3 sending termination signal.
+Rank 4 received state.
+Rank 4 found goal state.
+Rank 4 sending termination signal.
+Rank 5 received state.
+Rank 5 found goal state.
+Rank 5 sending termination signal.
+Rank 6 received state.
+Rank 6 found goal state.
+Rank 7 received state.
+Rank 2 sending termination signal.
+Rank 6 sending termination signal.
+Rank 0 received move from rank 1
+Goal state found by rank 1
+1 2 3 
+4 5 6 
+7 8 0 
+Solution found:
+1 2 3 
+4 5 6 
+7 8 0 
+Rank 7 found goal state.
+Rank 7 sending termination signal.
+Time taken: 0.004138 seconds
+sajjadalsaffar@Sajjads-MacBook-Air-130 exercise3 % mpirun -np 8 ./exercise3
+Rank 5 waiting to receive state.
+Rank 1 waiting to receive state.
+Rank 1 received state.
+Rank 1 found goal state.
+Rank 1 sending termination signal.
+Initial State:
+1 2 3 
+4 5 6 
+7 8 0 
+Rank 0 sending state to rank 1
+Rank 0 sending state to rank 2
+Rank 0 sending state to rank 3
+Rank 0 sending state to rank 4
+Rank 0 sending state to rank 5
+Rank 0 sending state to rank 6
+Rank 0 sending state to rank 7
+Rank 5 received state.
+Rank 5 found goal state.
+Rank 5 sending termination signal.
+Rank 0 received move from rank 1
+Rank 3 waiting to receive state.
+Rank 3 received state.
+Rank 3 found goal state.
+Rank 3 sending termination signal.
+Goal state found by rank 1
+1 2 3 
+4 5 6 
+7 8 0 
+Solution found:
+1 2 3 
+4 5 6 
+7 8 0 
+Rank 6 waiting to receive state.
+Rank 6 received state.
+Rank 6 found goal state.
+Rank 4 waiting to receive state.
+Rank 4 received state.
+Rank 4 found goal state.
+Rank 4 sending termination signal.
+Rank 2 waiting to receive state.
+Rank 7 waiting to receive state.
+Rank 7 received state.
+Rank 7 found goal state.
+Rank 2 received state.
+Rank 2 found goal state.
+Rank 2 sending termination signal.
+Rank 7 sending termination signal.
+Rank 6 sending termination signal.
+Time taken: 0.003177 seconds
+sajjadalsaffar@Sajjads-MacBook-Air-130 exercise3 % mpirun -np 8 ./exercise3
+Rank 3 waiting to receive state.
+Rank 4 waiting to receive state.
+Rank 5 waiting to receive state.
+Rank 7 waiting to receive state.
+Rank 2 waiting to receive state.
+Rank 6 waiting to receive state.
+Initial State:
+1 2 3 
+4 5 6 
+7 8 0 
+Rank 0 sending state to rank 1
+Rank 0 sending state to rank 2
+Rank 0 sending state to rank 3
+Rank 0 sending state to rank 4
+Rank 2 received state.
+Rank 0 sending state to rank 5
+Rank 3 received state.
+Rank 0 sending state to rank 6
+Rank 3 found goal state.
+Rank 4 received state.
+Rank 4 found goal state.
+Rank 0 sending state to rank 7
+Rank 3 sending termination signal.
+Rank 2 found goal state.
+Rank 2 sending termination signal.
+Rank 4 sending termination signal.
+Rank 6 received state.
+Rank 6 found goal state.
+Rank 7 received state.
+Rank 7 found goal state.
+Rank 7 sending termination signal.
+Rank 5 received state.
+Rank 5 found goal state.
+Rank 5 sending termination signal.
+Rank 6 sending termination signal.
+Rank 1 waiting to receive state.
+Rank 1 received state.
+Rank 0 received move from rank 3
+Goal state found by rank 3
+1 2 3 
+4 5 6 
+Rank 1 found goal state.
+7 8 0 
+Solution found:
+Rank 1 sending termination signal.
+1 2 3 
+4 5 6 
+7 8 0 
+Time taken: 0.003455 seconds
+sajjadalsaffar@Sajjads-MacBook-Air-130 exercise3 % 

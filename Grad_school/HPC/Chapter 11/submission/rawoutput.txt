@@ -1,0 +1,148 @@
+sajjadalsaffar@Sajjads-MacBook-Air-130 exercise2 % ./exercise2
+Initial Puzzle:
+1 2 3 
+4 5 6 
+7 0 8 
+
+Solution Found:
+1 2 3 
+4 5 6 
+7 0 8 
+
+1 2 3 
+4 5 6 
+7 8 0 
+
+Solved Puzzle:
+1 2 3 
+4 5 6 
+7 8 0 
+
+Time taken: 7.9833e-05 seconds
+sajjadalsaffar@Sajjads-MacBook-Air-130 exercise2 % ./exercise2
+Initial Puzzle:
+1 2 3 
+4 5 6 
+7 0 8 
+
+Solution Found:
+1 2 3 
+4 5 6 
+7 0 8 
+
+1 2 3 
+4 5 6 
+7 8 0 
+
+Solved Puzzle:
+1 2 3 
+4 5 6 
+7 8 0 
+
+Time taken: 8.6875e-05 seconds
+sajjadalsaffar@Sajjads-MacBook-Air-130 exercise2 % ./exercise2
+Initial Puzzle:
+1 2 3 
+4 5 6 
+7 0 8 
+
+Solution Found:
+1 2 3 
+4 5 6 
+7 0 8 
+
+1 2 3 
+4 5 6 
+7 8 0 
+
+Solved Puzzle:
+1 2 3 
+4 5 6 
+7 8 0 
+
+Time taken: 6.8875e-05 seconds
+sajjadalsaffar@Sajjads-MacBook-Air-130 exercise2 % ./exercise2
+Initial Puzzle:
+1 2 3 
+4 5 6 
+7 0 8 
+
+Solution Found:
+1 2 3 
+4 5 6 
+7 0 8 
+
+1 2 3 
+4 5 6 
+7 8 0 
+
+Solved Puzzle:
+1 2 3 
+4 5 6 
+7 8 0 
+
+Time taken: 9.225e-05 seconds
+sajjadalsaffar@Sajjads-MacBook-Air-130 exercise2 % ./exercise2
+Initial Puzzle:
+1 2 3 
+4 5 6 
+7 0 8 
+
+Solution Found:
+1 2 3 
+4 5 6 
+7 0 8 
+
+1 2 3 
+4 5 6 
+7 8 0 
+
+Solved Puzzle:
+1 2 3 
+4 5 6 
+7 8 0 
+
+Time taken: 0.00011475 seconds
+sajjadalsaffar@Sajjads-MacBook-Air-130 exercise2 % ./exercise2
+Initial Puzzle:
+1 2 3 
+4 5 6 
+7 0 8 
+
+Solution Found:
+1 2 3 
+4 5 6 
+7 0 8 
+
+1 2 3 
+4 5 6 
+7 8 0 
+
+Solved Puzzle:
+1 2 3 
+4 5 6 
+7 8 0 
+
+Time taken: 9.5042e-05 seconds
+sajjadalsaffar@Sajjads-MacBook-Air-130 exercise2 % ./exercise2
+Initial Puzzle:
+1 2 3 
+4 5 6 
+7 0 8 
+
+Solution Found:
+1 2 3 
+4 5 6 
+7 0 8 
+
+1 2 3 
+4 5 6 
+7 8 0 
+
+Solved Puzzle:
+1 2 3 
+4 5 6 
+7 8 0 
+
+Time taken: 8.2583e-05 seconds
+sajjadalsaffar@Sajjads-MacBook-Air-130 exercise2 % 
