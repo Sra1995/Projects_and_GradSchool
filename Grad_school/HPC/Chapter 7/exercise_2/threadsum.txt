@@ -1,0 +1,25 @@
+PS G:\Other computers\My MacBook Air\School\Shippensburg University\Fall 2024\CSC523\Exercises\Chapter 7\exercise_2>  & 'C:\Program Files\Java\jdk-23\bin\java.exe' '--enable-preview' '-XX:+ShowCodeDetailsInExceptionMessages' '-cp' 'C:\Users\saffa\AppData\Roaming\Code\User\workspaceStorage\bea472a65a985a980eb25f5712a135ca\redhat.java\jdt_ws\exercise_2_a2c4bf90\bin' 'ThreadedSummation'
+Total Sum: 500000500000, Time: 16 ms for n = 1000000
+Total Sum: 5000000050000000, Time: 4 ms for n = 100000000
+Total Sum: 500000000500000000, Time: 33 ms for n = 1000000000
+PS G:\Other computers\My MacBook Air\School\Shippensburg University\Fall 2024\CSC523\Exercises\Chapter 7\exercise_2>  g:; cd 'g:\Other computers\My MacBook Air\School\Shippensburg University\Fall 2024\CSC523\Exercises\Chapter 7\exercise_2'; & 'C:\Program Files\Java\jdk-23\bin\java.exe' '--enable-preview' '-XX:+ShowCodeDetailsInExceptionMessages' '-cp' 'C:\Users\saffa\AppData\Roaming\Code\User\workspaceStorage\bea472a65a985a980eb25f5712a135ca\redhat.java\jdt_ws\exercise_2_a2c4bf90\bin' 'ThreadedSummation'
+Total Sum: 500000500000, Time: 17 ms for n = 1000000
+Total Sum: 5000000050000000, Time: 4 ms for n = 100000000
+Total Sum: 500000000500000000, Time: 33 ms for n = 1000000000
+PS G:\Other computers\My MacBook Air\School\Shippensburg University\Fall 2024\CSC523\Exercises\Chapter 7\exercise_2>  g:; cd 'g:\Other computers\My MacBook Air\School\Shippensburg University\Fall 2024\CSC523\Exercises\Chapter 7\exercise_2'; & 'C:\Program Files\Java\jdk-23\bin\java.exe' '--enable-preview' '-XX:+ShowCodeDetailsInExceptionMessages' '-cp' 'C:\Users\saffa\AppData\Roaming\Code\User\workspaceStorage\bea472a65a985a980eb25f5712a135ca\redhat.java\jdt_ws\exercise_2_a2c4bf90\bin' 'ThreadedSummation'
+Total Sum: 500000500000, Time: 17 ms for n = 1000000
+Total Sum: 5000000050000000, Time: 4 ms for n = 100000000
+Total Sum: 500000000500000000, Time: 34 ms for n = 1000000000
+PS G:\Other computers\My MacBook Air\School\Shippensburg University\Fall 2024\CSC523\Exercises\Chapter 7\exercise_2>  g:; cd 'g:\Other computers\My MacBook Air\School\Shippensburg University\Fall 2024\CSC523\Exercises\Chapter 7\exercise_2'; & 'C:\Program Files\Java\jdk-23\bin\java.exe' '--enable-preview' '-XX:+ShowCodeDetailsInExceptionMessages' '-cp' 'C:\Users\saffa\AppData\Roaming\Code\User\workspaceStorage\bea472a65a985a980eb25f5712a135ca\redhat.java\jdt_ws\exercise_2_a2c4bf90\bin' 'ThreadedSummation' 
+Total Sum: 500000500000, Time: 19 ms for n = 1000000
+Total Sum: 5000000050000000, Time: 4 ms for n = 100000000
+Total Sum: 500000000500000000, Time: 33 ms for n = 1000000000
+PS G:\Other computers\My MacBook Air\School\Shippensburg University\Fall 2024\CSC523\Exercises\Chapter 7\exercise_2>  g:; cd 'g:\Other computers\My MacBook Air\School\Shippensburg University\Fall 2024\CSC523\Exercises\Chapter 7\exercise_2'; & 'C:\Program Files\Java\jdk-23\bin\java.exe' '--enable-preview' '-XX:+ShowCodeDetailsInExceptionMessages' '-cp' 'C:\Users\saffa\AppData\Roaming\Code\User\workspaceStorage\bea472a65a985a980eb25f5712a135ca\redhat.java\jdt_ws\exercise_2_a2c4bf90\bin' 'ThreadedSummation' 
+Total Sum: 500000500000, Time: 17 ms for n = 1000000
+Total Sum: 5000000050000000, Time: 4 ms for n = 100000000
+Total Sum: 500000000500000000, Time: 34 ms for n = 1000000000
+PS G:\Other computers\My MacBook Air\School\Shippensburg University\Fall 2024\CSC523\Exercises\Chapter 7\exercise_2>  g:; cd 'g:\Other computers\My MacBook Air\School\Shippensburg University\Fall 2024\CSC523\Exercises\Chapter 7\exercise_2'; & 'C:\Program Files\Java\jdk-23\bin\java.exe' '--enable-preview' '-XX:+ShowCodeDetailsInExceptionMessages' '-cp' 'C:\Users\saffa\AppData\Roaming\Code\User\workspaceStorage\bea472a65a985a980eb25f5712a135ca\redhat.java\jdt_ws\exercise_2_a2c4bf90\bin' 'ThreadedSummation' 
+Total Sum: 500000500000, Time: 19 ms for n = 1000000
+Total Sum: 5000000050000000, Time: 4 ms for n = 100000000
+Total Sum: 500000000500000000, Time: 34 ms for n = 1000000000
+PS G:\Other computers\My MacBook Air\School\Shippensburg University\Fall 2024\CSC523\Exercises\Chapter 7\exercise_2> 
