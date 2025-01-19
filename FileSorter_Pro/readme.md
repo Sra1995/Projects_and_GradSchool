@@ -53,7 +53,7 @@ You can modify these paths in the script according to your preferences. I liked 
 Supported File Types
 
 Images
-	•	Examples: .jpg, .png, .gif, .svg, .bmp, .raw, .heic, etc.
+	-	Examples: .jpg, .png, .gif, .svg, .bmp, .raw, .heic, etc.
 
 Audio
 	•	Examples: .mp3, .flac, .wav, .aac, .ogg, etc.
