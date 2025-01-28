@@ -76,6 +76,7 @@ project/
 └── requirements.txt      # Python dependencies
 ```
 Future Improvements
+
 	•	User Avatars: Add random avatars for users to identify message sources.
 	•	Custom Rooms: Allow users to create and join separate chat rooms.
 	•	Message Moderation: Add spam detection and profanity filters.
