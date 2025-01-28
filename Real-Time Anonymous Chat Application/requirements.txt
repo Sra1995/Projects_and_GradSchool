@@ -1,0 +1,14 @@
+listing the Python dependencies the project:
+
+Flask==2.3.2
+Flask-SocketIO==5.3.0
+python-socketio==5.8.0
+eventlet==0.33.3
+gevent==22.10.2
+gevent-websocket==0.10.1
+
+Notes:
+	•	Flask: The core framework for building the backend.
+	•	Flask-SocketIO: Enables real-time WebSocket communication.
+	•	python-socketio: The Python client and server library for WebSocket handling.
+	•	eventlet or gevent: These are optional WebSocket servers used for asynchronous handling. Only one is needed; you can pick eventlet for simplicity or gevent for performance.
