@@ -43,11 +43,9 @@ The frontend:
 ### Installation
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/anonymous-chat.git
-   cd anonymous-chat
+
   
-	2.	Install the required Python packages:
+2. Install the required Python packages:
 
 pip install flask flask-socketio
 
