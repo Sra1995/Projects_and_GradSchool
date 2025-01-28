@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymous Chat Group</title>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex justify-center items-center h-screen bg-gray-100">
+    <div class="w-96 p-4 bg-white rounded shadow-md">
+        <div id="join-create-form">
+            <h1 class="text-2xl font-bold mb-4 text-center">Anonymous Chat Group</h1>
+            <input id="room-id" type="text" placeholder="Room ID" class="w-full p-2 border rounded mb-2">
+            <input id="room-password" type="password" placeholder="Room Password" class="w-full p-2 border rounded mb-4">
+            <button id="create-room" class="w-full bg-blue-500 text-white py-2 rounded mb-2">Create Room</button>
+            <button id="join-room" class="w-full bg-green-500 text-white py-2 rounded">Join Room</button>
+        </div>
+        <div id="chat-area" class="hidden">
+            <h2 id="room-name" class="text-xl font-bold mb-4 text-center"></h2>
+            <div id="messages" class="h-64 overflow-y-auto p-2 border rounded mb-4 bg-gray-50"></div>
+            <input id="username" type="text" placeholder="Your Username" class="w-full p-2 border rounded mb-2">
+            <input id="message" type="text" placeholder="Your Message" class="w-full p-2 border rounded mb-2">
+            <button id="send-message" class="w-full bg-blue-500 text-white py-2 rounded">Send Message</button>
+            <button id="leave-room" class="w-full bg-red-500 text-white py-2 rounded mt-2">Leave Room</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const socket = io();
+
+            const joinCreateForm = document.getElementById("join-create-form");
+            const chatArea = document.getElementById("chat-area");
+            const roomName = document.getElementById("room-name");
+            const messages = document.getElementById("messages");
+
+            document.getElementById("create-room").addEventListener("click", () => {
+                const roomId = document.getElementById("room-id").value;
+                const password = document.getElementById("room-password").value;
+                socket.emit("create_room", { room_id: roomId, password });
+            });
+
+            document.getElementById("join-room").addEventListener("click", () => {
+                const roomId = document.getElementById("room-id").value;
+                const password = document.getElementById("room-password").value;
+                socket.emit("join_room", { room_id: roomId, password });
+            });
+
+            document.getElementById("send-message").addEventListener("click", () => {
+                const roomId = roomName.textContent;
+                const username = document.getElementById("username").value;
+                const message = document.getElementById("message").value;
+                socket.emit("send_message", { room_id: roomId, username, message });
+            });
+
+            socket.on("room_created", data => {
+                roomName.textContent = data.room_id;
+                joinCreateForm.classList.add("hidden");
+                chatArea.classList.remove("hidden");
+            });
+
+            socket.on("room_joined", data => {
+                roomName.textContent = data.room_id;
+                joinCreateForm.classList.add("hidden");
+                chatArea.classList.remove("hidden");
+            });
+
+            socket.on("receive_message", data => {
+                const messageDiv = document.createElement("div");
+                messageDiv.classList.add("mb-2");
+                messageDiv.innerHTML = `<strong>${data.username}:</strong> ${data.message} <span class="text-gray-400 text-sm">${data.timestamp}</span>`;
+                messages.appendChild(messageDiv);
+            });
+
+            document.getElementById("leave-room").addEventListener("click", () => {
+                joinCreateForm.classList.remove("hidden");
+                chatArea.classList.add("hidden");
+                roomName.textContent = "";
+                messages.innerHTML = "";
+            });
+        });
+    </script>
+</body>
+</html>
