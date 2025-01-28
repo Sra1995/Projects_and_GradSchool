@@ -87,6 +87,7 @@ Inspiration
 This project was inspired by the anonymous chat applications you see in movies, but I wanted to add my own twist. Instead of a traditional two-way chat, I wanted to create a one-way communication system where users can only see responses from others, making the experience more mysterious and unique as if they would use burner phone.
 
 Technologies Used
+
 	•	Flask: Backend framework for Python.
 	•	Flask-SocketIO: Real-time WebSocket communication.
 	•	HTML5 & JavaScript: Frontend for structure and interactivity.
