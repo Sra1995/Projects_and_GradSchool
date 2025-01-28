@@ -50,12 +50,12 @@ The frontend:
 pip install flask flask-socketio
 
 
-	3.	Run the application:
+3.	Run the application:
 
 python chat.py
 
 
-	4.	Open your browser and go to http://localhost:5000 to use the application.
+4.	Open your browser and go to http://localhost:5000 to use the application.
 
 How to Use
 	1.	Open the chat application in your browser.
@@ -64,7 +64,7 @@ How to Use
 	4.	Enjoy the anonymous and unique chat experience!
 
 File Structure
-
+```
 project/
 │
 ├── templates/
@@ -74,7 +74,7 @@ project/
 ├── chat.py               # Flask backend with Socket.IO
 ├── README.md             # Project documentation
 └── requirements.txt      # Python dependencies
-
+```
 Future Improvements
 	•	User Avatars: Add random avatars for users to identify message sources.
 	•	Custom Rooms: Allow users to create and join separate chat rooms.
@@ -84,7 +84,7 @@ Future Improvements
 
 Inspiration
 
-This project was inspired by the anonymous chat applications you see in movies, but I wanted to add my own twist. Instead of a traditional two-way chat, I wanted to create a one-way communication system where users can only see responses from others, making the experience more mysterious and unique.
+This project was inspired by the anonymous chat applications you see in movies, but I wanted to add my own twist. Instead of a traditional two-way chat, I wanted to create a one-way communication system where users can only see responses from others, making the experience more mysterious and unique as if they would use burner phone.
 
 Technologies Used
 	•	Flask: Backend framework for Python.
